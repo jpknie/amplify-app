@@ -1,3 +1,7 @@
+.RecordingViewContainer {
+   background-color: black;
+}
+
 .RecordingView {
    display: flex;
    flex-direction: row;
@@ -12,11 +16,31 @@
 .RecordingView .CalendarFilter {
    display: flx;
    justify-content: center;
+   margin-bottom: 20px;
 }
 
 .RecordingView .CalendarFilter .CalendarHeader {
    display: block;
    font-size: 1.75em;
    color: white;
+}
+
+div .Recordings {
+   background-color: black;
+}
+
+.RecordingViewContainer h2 {
+   display: inline-flex;
+   width: 100%;
+   border-bottom: 1px solid grey;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+   text-align: center;
+}
+
+.RecordingViewContainer h2 span {
+   padding: 0 10px;
+   color: white;
+   font-size: 1.25em;
 }
 

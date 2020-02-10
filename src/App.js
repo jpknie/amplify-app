@@ -58,11 +58,9 @@ class App extends React.Component {
                 </NavItem>
               </SideNav.Nav>
             </SideNav>
-            <main>
-              <Route path="/recordings" component={
+           <Route path="/recordings" component={
                   props => <RecordingView />
-                } />
-            </main>
+            } />
         </React.Fragment>
         }
       />
