@@ -17,10 +17,10 @@ function App() {
         <SideNav.Nav defaultSelected="home">
           <NavItem eventKey="home">
             <NavIcon>
-            <FontAwesomeIcon icon={faCoffee} />
+              <FontAwesomeIcon icon={faCoffee} />
             </NavIcon>
             <NavText>
-              Home
+              Digia Pelican Rouge
             </NavText>
           </NavItem>
         </SideNav.Nav>
