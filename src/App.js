@@ -1,35 +1,75 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import '@fortawesome/react-fontawesome';
+import { BrowserRouter as Router,
+         Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <SideNav
-        onSelect={(selected) => console.log(selected)} style={{'background-color': '#00fa'}}>
-        <SideNav.Toggle />
-        <SideNav.Nav defaultSelected="home">
-          <NavItem eventKey="home">
-            <NavIcon>
-              <FontAwesomeIcon icon={faCoffee} />
-            </NavIcon>
-            <NavText>
-              Digia Pelican Rouge
-            </NavText>
-          </NavItem>
-        </SideNav.Nav>
-      </SideNav>
-      <header className="App-header">
-      <p>Testing React side navigator</p>
-      </header>
-    </div>
-  );
+import RecordingView from './RecordingView';
+
+import SideNav, { 
+  Toggle, 
+  Nav, 
+  NavItem, 
+  NavIcon, NavText } from '@trendmicro/react-sidenav';
+
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faVideo, faHome } from '@fortawesome/free-solid-svg-icons'
+
+class App extends React.Component {
+  
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <Route render={
+            ({ location, history }) =>
+          <React.Fragment>
+            <SideNav
+              onSelect={(selected) => {
+                const to = '/' + selected; 
+                if (location.pathname !== to) {
+                  history.push(to);
+                }
+              }}>
+              <SideNav.Toggle />
+              <SideNav.Nav defaultSelected="home">
+                <NavItem eventKey="home">
+                  <NavIcon>
+                    <FontAwesomeIcon icon={faHome} />
+                  </NavIcon>
+                  <NavText>
+                    Digia Pelican Rouge
+                  </NavText>
+                </NavItem>
+                <NavItem eventKey="recordings">
+                  <NavIcon>
+                    <FontAwesomeIcon icon={faVideo} />
+                  </NavIcon>
+                  <NavText>
+                    Videos
+                  </NavText>          
+                </NavItem>
+              </SideNav.Nav>
+            </SideNav>
+            <main>
+              <Route path="/recordings" component={
+                  props => <RecordingView />
+                } />
+            </main>
+        </React.Fragment>
+        }
+      />
+      </Router>
+      </div>
+    );
+  }
 }
 
 export default App;

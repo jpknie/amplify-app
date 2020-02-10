@@ -1,0 +1,22 @@
+.RecordingView {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.Calendar {
+   display: flex;
+   justify-content: center;
+}
+
+.RecordingView .CalendarFilter {
+   display: flx;
+   justify-content: center;
+}
+
+.RecordingView .CalendarFilter .CalendarHeader {
+   display: block;
+   font-size: 1.75em;
+   color: white;
+}
+
