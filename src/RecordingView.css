@@ -1,22 +1,61 @@
-.RecordingView {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-}
-
-.Calendar {
-   display: flex;
-   justify-content: center;
+-.RecordingView {
+   height: 100%;
 }
 
 .RecordingView .CalendarFilter {
-   display: flx;
+   display: flex;
+   flex-direction: column;
+   margin-left: 10em;
+   margin-bottom: 20px;
    justify-content: center;
+   align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+   .RecordingView .CalendarFilter {
+      margin-left: 2px;
+   }
 }
 
 .RecordingView .CalendarFilter .CalendarHeader {
-   display: block;
+   display: flex;
    font-size: 1.75em;
    color: white;
+   justify-content: center;
 }
+
+.RecordingsContainer {
+   margin-left: 10em;
+   -ms-flex-wrap: wrap;
+   -ms-flex-direction: column;
+   -webkit-flex-flow: row wrap; 
+   flex-flow: row wrap; 
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   justify-content: left;
+}
+
+@media screen and (max-width: 400px) {
+   .RecordingsContainer {
+      margin-left: 5px;
+      justify-content: center;
+   }
+}
+
+
+.RecordingsContainer div {
+   max-width: 200px; 
+   margin: .3vw; 
+   -webkit-box-flex: auto;
+   -ms-flex: auto;
+   flex: auto;
+   flex-direction: column;
+}
+ 
+ .RecordingsContainer div img { 
+   height: auto; 
+   width: 100%;
+  }
+
 

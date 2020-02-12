@@ -5,6 +5,7 @@ import { BrowserRouter as Router,
          Route } from 'react-router-dom';
 
 import RecordingView from './RecordingView';
+import Home from './Home';
 
 import SideNav, { 
   Toggle, 
@@ -45,7 +46,7 @@ class App extends React.Component {
                     <FontAwesomeIcon icon={faHome} />
                   </NavIcon>
                   <NavText>
-                    Digia Pelican Rouge
+                    Home
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="recordings">
@@ -58,11 +59,12 @@ class App extends React.Component {
                 </NavItem>
               </SideNav.Nav>
             </SideNav>
-            <main>
-              <Route path="/recordings" component={
-                  props => <RecordingView />
-                } />
-            </main>
+            <Route path="/home" component={
+                props => <Home />
+              } />
+            <Route path="/recordings" component={
+                props => <RecordingView />
+              } />
         </React.Fragment>
         }
       />
